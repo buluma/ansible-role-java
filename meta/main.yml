@@ -1,7 +1,7 @@
 ---
 galaxy_info:
-  author: Robert de Bock
-  namespace: robertdebock
+  author: Michael Buluma
+  namespace: buluma
   role_name: java
   description: Install and configure java on your system.
   license: Apache-2.0

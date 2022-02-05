@@ -1,5 +1,5 @@
 ---
 roles:
-  - name: robertdebock.bootstrap
+  - name: buluma.bootstrap
 collections:
   - name: community.general
