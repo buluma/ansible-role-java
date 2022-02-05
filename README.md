@@ -4,7 +4,7 @@ Install and configure java on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-java/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-java/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-java/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-java)|[![quality](https://img.shields.io/ansible/quality/54617)](https://galaxy.ansible.com/buluma/java)|[![downloads](https://img.shields.io/ansible/role/d/54617)](https://galaxy.ansible.com/buluma/java)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/releases/)|
+|[![github](https://github.com/buluma/ansible-role-java/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-java/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-java/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-java/-/commits/master)|[![quality](https://img.shields.io/ansible/quality/54617)](https://galaxy.ansible.com/buluma/java)|[![downloads](https://img.shields.io/ansible/role/d/54617)](https://galaxy.ansible.com/buluma/java)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
