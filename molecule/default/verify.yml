@@ -1,0 +1,11 @@
+---
+- name: Verify
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: check if java can be started
+      ansible.builtin.command:
+        cmd: java -version
+      changed_when: no
