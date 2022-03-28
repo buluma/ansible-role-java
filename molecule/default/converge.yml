@@ -10,9 +10,9 @@
       when: ansible_os_family == 'Debian'
 
     - name: update apt cache
-        ansible.builtin.apt:
-          update_cache: yes
-        when: ansible_pkg_mgr == "apt"
+      ansible.builtin.apt:
+        update_cache: yes
+      when: ansible_pkg_mgr == "apt"
 
   roles:
     - role: ansible-role-java
