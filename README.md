@@ -2,9 +2,9 @@
 
 Install and configure java on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-java/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-java/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-java/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-java/-/commits/master)|[![quality](https://img.shields.io/ansible/quality/54617)](https://galaxy.ansible.com/buluma/java)|[![downloads](https://img.shields.io/ansible/role/d/54617)](https://galaxy.ansible.com/buluma/java)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/releases/)|
+|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|---------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-java/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-java/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-java/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-java)|[![quality](https://img.shields.io/ansible/quality/54617)](https://galaxy.ansible.com/buluma/java)|[![downloads](https://img.shields.io/ansible/role/d/54617)](https://galaxy.ansible.com/buluma/java)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -15,6 +15,16 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   hosts: all
   become: yes
   gather_facts: yes
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+
+    - name: update apt cache
+        ansible.builtin.apt:
+          update_cache: yes
+        when: ansible_pkg_mgr == "apt"
 
   roles:
     - role: buluma.java
