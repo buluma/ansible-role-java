@@ -1,2 +1,5 @@
 ---
-tox_parallel: no
+#
+# Ansible managed
+#
+tox_parallel: yes

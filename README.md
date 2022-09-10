@@ -22,9 +22,9 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
       when: ansible_os_family == 'Debian'
 
     - name: update apt cache
-        ansible.builtin.apt:
-          update_cache: yes
-        when: ansible_pkg_mgr == "apt"
+      ansible.builtin.apt:
+        update_cache: yes
+      when: ansible_pkg_mgr == "apt"
 
   roles:
     - role: buluma.java
@@ -56,8 +56,7 @@ java_vendor: openjdk
 # Set the variable to install the type, valid values are "jre" and "jdk".
 java_type: jre
 
-# Set the version of java, valid values are "6", 7", "8", "9", "10", "11",
-# "12" or "13".
+# Set the version of java, valid values are 6, 7, 8, 9, 10, 11, 12 or 13.
 # By default, a distibution default is used, mapped in `vars/main.yml`.
 # By setting java_version, you overwrite this default to your selected
 # version.
@@ -92,11 +91,11 @@ The following roles are used to prepare a system. You can prepare your system in
 
 | Requirement | GitHub | GitLab |
 |-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
 
 ## [Context](#context)
 
-This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.co.ke/) for further information.
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
 Here is an overview of related roles:
 
@@ -123,14 +122,12 @@ The minimum version of Ansible required is 2.10, tests have been done to:
 - The development version.
 
 
-## [Included version(s)](#included-versions)
-
-This role [refers to a version](https://github.com/buluma/ansible-role-java/blob/master/vars/main.yml) released by Oracle. Check the released version(s) here:
-- [java](https://www.oracle.com/technetwork/java/javaseproducts/downloads/index.html).
-
-This version reference means a role may get outdated. Monthly tests occur to see if [bit-rot](https://en.wikipedia.org/wiki/Software_rot) occured. If you however find a problem, please create an issue, I'll get on it as soon as possible.
 
 If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-java/issues)
+
+## [Changelog](#changelog)
+
+[Role History](https://github.com/buluma/ansible-role-java/blob/master/CHANGELOG.md)
 
 ## [License](#license)
 
@@ -138,4 +135,4 @@ Apache-2.0
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.github.io/)
+[buluma](https://buluma.github.io/)
