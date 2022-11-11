@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-java/tree/HEAD)
+## [1.0.6](https://github.com/buluma/ansible-role-java/tree/1.0.6) (2022-09-10)
 
-[Full Changelog](https://github.com/buluma/ansible-role-java/compare/1.0.5...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-java/compare/1.0.5...1.0.6)
 
 **Closed issues:**
 
