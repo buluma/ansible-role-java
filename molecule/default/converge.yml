@@ -4,15 +4,14 @@
   become: yes
   gather_facts: yes
 
-  pre_tasks:
-    - name: Update apt cache.
-      apt: update_cache=true cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-
-    - name: update apt cache
-      ansible.builtin.apt:
-        update_cache: yes
-      when: ansible_pkg_mgr == "apt"
+  # We want to test some non-default version of java, to ensure we can install a specific version.
+  vars:
+    _desired_java_version:
+      default: 8
+      Debian: 11
+      Debian-bookworm: 17
+    desired_java_version: "{{ _desired_java_version[ansible_distribution ~ '-' ~ ansible_distribution_release] | default(_desired_java_version[ansible_distribution] | default(_desired_java_version['default'])) }}"
 
   roles:
     - role: ansible-role-java
+      java_version: "{{ desired_java_version }}"
