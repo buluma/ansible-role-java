@@ -2,9 +2,9 @@
 
 Install and configure java on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-java/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-java/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-java/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-java)|[![quality](https://img.shields.io/ansible/quality/54617)](https://galaxy.ansible.com/buluma/java)|[![downloads](https://img.shields.io/ansible/role/d/54617)](https://galaxy.ansible.com/buluma/java)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-java/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-java/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-java/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-java)|[![downloads](https://img.shields.io/ansible/role/d/4740)](https://galaxy.ansible.com/buluma/java)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-java.svg)](https://github.com/buluma/ansible-role-java/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -17,28 +17,27 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   become: yes
   gather_facts: yes
 
-  pre_tasks:
-    - name: Update apt cache.
-      apt: update_cache=true cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-
-    - name: update apt cache
-      ansible.builtin.apt:
-        update_cache: yes
-      when: ansible_pkg_mgr == "apt"
+  # We want to test some non-default version of java, to ensure we can install a specific version.
+  vars:
+    _desired_java_version:
+      default: 8
+      Debian: 11
+      Debian-bookworm: 17
+    desired_java_version: "{{ _desired_java_version[ansible_distribution ~ '-' ~ ansible_distribution_release] | default(_desired_java_version[ansible_distribution] | default(_desired_java_version['default'])) }}"
 
   roles:
     - role: buluma.java
+      java_version: "{{ desired_java_version }}"
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-java/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-- name: Default
+- name: Prepare
   hosts: all
-  gather_facts: no
   become: yes
+  gather_facts: no
 
   roles:
     - role: buluma.bootstrap
@@ -61,7 +60,7 @@ java_vendor: openjdk
 java_type: jre
 
 # Set the version of java, valid values are 6, 7, 8, 9, 10, 11, 12 or 13.
-# By default, a distibution default is used, mapped in `vars/main.yml`.
+# By default, a distribution default is used, mapped in `vars/main.yml`.
 # By setting java_version, you overwrite this default to your selected
 # version.
 java_version: "{{ java_default_version }}"
@@ -119,7 +118,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |[opensuse](https://hub.docker.com/repository/docker/buluma/opensuse/general)|all|
 |[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
 
-The minimum version of Ansible required is 2.10, tests have been done to:
+The minimum version of Ansible required is 2.12, tests have been done to:
 
 - The previous version.
 - The current version.
