@@ -1,14 +1,18 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-java/tree/HEAD)
+## [1.1.0](https://github.com/buluma/ansible-role-java/tree/1.1.0) (2024-01-02)
 
-[Full Changelog](https://github.com/buluma/ansible-role-java/compare/1.0.8...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-java/compare/1.0.8...1.1.0)
 
 **Closed issues:**
 
 - Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#19](https://github.com/buluma/ansible-role-java/issues/19)
 - Update action [\#18](https://github.com/buluma/ansible-role-java/issues/18)
 - rebuild action [\#17](https://github.com/buluma/ansible-role-java/issues/17)
+
+**Merged pull requests:**
+
+- Bump actions/checkout from 3 to 4 [\#20](https://github.com/buluma/ansible-role-java/pull/20) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.0.8](https://github.com/buluma/ansible-role-java/tree/1.0.8) (2023-12-25)
 
