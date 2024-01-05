@@ -76,6 +76,12 @@ _java_openjdk_package:
       default: openjdk-13-jdk
     17:
       default: openjdk-17-jdk
+    19:
+      default: openjdk-19-jdk
+    20:
+      default: openjdk-20-jdk
+    21:
+      default: openjdk-21-jdk
 
 java_openjdk_package: "{{ _java_openjdk_package[java_type][java_version | int][ansible_distribution] | default(_java_openjdk_package[java_type][java_version | int]['default'] | default([])) }}"
 
