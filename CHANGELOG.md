@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#26](https://github.com/buluma/ansible-role-java/pull/26) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/dependabot-auto-merge-action from 2.0.2 to 2.1.1 [\#25](https://github.com/buluma/ansible-role-java/pull/25) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.2.0](https://github.com/buluma/ansible-role-java/tree/1.2.0) (2024-01-05)
