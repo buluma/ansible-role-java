@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test java_vendor
   ansible.builtin.assert:
     that:

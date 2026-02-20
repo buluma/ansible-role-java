@@ -16,8 +16,7 @@
   ansible.builtin.package:
     name: "{{ java_openjdk_package }}"
     state: present
-  when:
-    java_vendor == "openjdk"
+  when: java_vendor == "openjdk"
   environment:
     USE: "X -cups -alsa -fontconfig"
 
@@ -109,7 +108,7 @@
 - name: Set JAVA_HOME in /etc/environment
   ansible.builtin.lineinfile:
     path: /etc/profile.d/java_home.sh
-    regexp: '^export JAVA_HOME='
+    regexp: "^export JAVA_HOME="
     line: 'export JAVA_HOME="{{ java_home.stdout }}"'
     create: true
     mode: "0644"
