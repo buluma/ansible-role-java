@@ -5,7 +5,7 @@
   gather_facts: true
 
   tasks:
-  - name: Run java -version
-    ansible.builtin.command:
-      cmd: java -version
-    changed_when: false
+    - name: Run java -version
+      ansible.builtin.command:
+        cmd: java -version
+      changed_when: false
