@@ -3,15 +3,16 @@
 
 # This part maps a distribution to a version of java.
 _java_default_version:
-  default: 11
+  default: 17
   Alpine: 8
   Amazon: 17
   Debian-12: 17
+  Debian-13: 17
   Gentoo: 8
-  RedHat: 8
+  RedHat: 11
   Ubuntu-18: 17
   Ubuntu-20: 17
-  Ubuntu: 19
+  Ubuntu: 17
   Suse: 8
 java_default_version:
   "{{ _java_default_version[ansible_facts.distribution ~ '-' ~ ansible_facts.distribution_major_version] | default(_java_default_version[ansible_facts.distribution]
