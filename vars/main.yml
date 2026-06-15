@@ -50,7 +50,9 @@ _java_openjdk_package:
     13:
       default: openjdk-13-jre
     17:
-      default: openjdk-17-jre
+      default: java-17-openjdk
+      Debian: openjdk-17-jre
+      Ubuntu: openjdk-17-jre
       Amazon: java-17-amazon-corretto
     19:
       default: openjdk-19-jre
@@ -82,7 +84,9 @@ _java_openjdk_package:
     13:
       default: openjdk-13-jdk
     17:
-      default: openjdk-17-jdk
+      default: java-17-openjdk-devel
+      Debian: openjdk-17-jdk
+      Ubuntu: openjdk-17-jdk
       Amazon: java-17-amazon-corretto-devel
     19:
       default: openjdk-19-jdk
