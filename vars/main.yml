@@ -15,8 +15,7 @@ _java_default_version:
   Ubuntu-20: 17
   Ubuntu: 17
   Suse: 8
-java_default_version:
-  "{{ _java_default_version[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_java_default_version[ansible_facts['distribution']]
+java_default_version: "{{ _java_default_version[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_java_default_version[ansible_facts['distribution']]
   | default(_java_default_version[ansible_facts['os_family']] | default(_java_default_version['default'] ))) }}"
 
 # This part maps the type of java package (jre/jdk) to a package name
@@ -102,9 +101,8 @@ _java_openjdk_package:
       Ubuntu: openjdk-21-jdk
       Amazon: java-21-amazon-corretto-devel
 
-java_openjdk_package:
-  "{{ _java_openjdk_package[java_type][java_version | int][ansible_facts['distribution']] | default(_java_openjdk_package[java_type][java_version | int]['default']
-  | default([])) }}"
+java_openjdk_package: "{{ _java_openjdk_package[java_type][java_version | int][ansible_facts['distribution']] | default(_java_openjdk_package[java_type][java_version
+  | int]['default'] | default([])) }}"
 
 _java_package:
   jre:
