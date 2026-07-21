@@ -8,9 +8,16 @@ _java_default_version:
   Amazon: 17
   Debian-12: 17
   Debian-13: 21
-  Fedora: 21
+  Fedora: 25
   Gentoo: 8
   RedHat: 11
+  # EL10 dropped java-11-openjdk from its repos. ansible_facts['distribution']
+  # is the clone name (Rocky/AlmaLinux/CentOS), not "RedHat", so each needs
+  # its own key here -- the os_family fallback below only catches unlisted ones.
+  RedHat-10: 21
+  Rocky-10: 21
+  AlmaLinux-10: 21
+  CentOS-10: 21
   Ubuntu-18: 17
   Ubuntu-20: 17
   Ubuntu: 17
@@ -61,6 +68,10 @@ _java_openjdk_package:
       Debian: openjdk-21-jre
       Ubuntu: openjdk-21-jre
       Amazon: java-21-amazon-corretto
+    25:
+      default: java-25-openjdk
+      Debian: openjdk-25-jre
+      Ubuntu: openjdk-25-jre
   jdk:
     6:
       default: java-1.6.0-openjdk-devel
@@ -100,6 +111,10 @@ _java_openjdk_package:
       Debian: openjdk-21-jdk
       Ubuntu: openjdk-21-jdk
       Amazon: java-21-amazon-corretto-devel
+    25:
+      default: java-25-openjdk-devel
+      Debian: openjdk-25-jdk
+      Ubuntu: openjdk-25-jdk
 
 java_openjdk_package: "{{ _java_openjdk_package[java_type][java_version | int][ansible_facts['distribution']] | default(_java_openjdk_package[java_type][java_version
   | int]['default'] | default([])) }}"
