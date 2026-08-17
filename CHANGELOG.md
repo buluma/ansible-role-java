@@ -71,6 +71,7 @@
 **Merged pull requests:**
 
 - Bump actions/checkout from 3 to 4 [\#20](https://github.com/buluma/ansible-role-java/pull/20) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.4 to 1.0.5 [\#9](https://github.com/buluma/ansible-role-java/pull/9) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.0.8](https://github.com/buluma/ansible-role-java/tree/1.0.8) (2023-12-25)
 
@@ -92,10 +93,6 @@
 **Closed issues:**
 
 - install openjdk java \(package\): install 'openjdk-11-jre'' failed [\#8](https://github.com/buluma/ansible-role-java/issues/8)
-
-**Merged pull requests:**
-
-- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.4 to 1.0.5 [\#9](https://github.com/buluma/ansible-role-java/pull/9) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.0.5](https://github.com/buluma/ansible-role-java/tree/1.0.5) (2022-03-28)
 
